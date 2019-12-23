@@ -147,6 +147,7 @@
     <ClInclude Include="remove.h" />
     <ClInclude Include="using.h" />
     <ClInclude Include="get-inf.h" />
+    <ClInclude Include="output.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.TXT" />

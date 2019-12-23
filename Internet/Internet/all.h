@@ -2,4 +2,5 @@
 #include"insert.h"
 #include"remove.h"
 #include"get-inf.h"
+#include"output.h"
 #include"dijkstra.h"

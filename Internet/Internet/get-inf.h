@@ -37,3 +37,12 @@ int Graphlink<T>::getNextNeighbor(int v, int w) {
 	}
 	return -1;//下一个邻接顶点
 }
+template <typename T>
+int Graphlink<T>::getNeighbor(Edge*& pEdge) {//取v关于边pEdge的邻接顶点
+	if (pEdge != nullptr) {
+		int m = pEdge->dest;
+		pEdge = pEdge->link;
+		return m;
+	}
+	else return -1;
+}

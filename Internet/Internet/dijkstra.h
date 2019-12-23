@@ -2,27 +2,26 @@
 #include"Edge-Vertex.h"
 const int max = 0x7fffffff;
 template<typename T>
-int getnumV(Graphlink<T>& G, T v, int dist[], int path[]) {
-	int n = G.getmaxV();
+void Graphlink<T>::shortestPath(int v, int* dist, int* path) {
+	int n = getmaxVertices();
 	bool* S = new bool[n];
-	int i, j, k;
 	int w, min;
-	for (i = 0; i < n; i++) {
-		dist[i] = G.getWeight(v, i);
+	for (int i = 0; i < n; i++) {
+		dist[i] = getWeight(v, i);
 		S[i] = false;
 		if (i != v && dist[i] < max)path[i] = v;
 		else path[i] = -1;
 	}
 	S[v] = true;
 	dist[v] = 0;
-	for (i = 0; i < n - 1; i++) {
+	for (int i = 0; i < n - 1; i++) {
 		min = max;
 		int u = v;
-		for (j = 0; j < n; j++)
+		for (int j = 0; j < n; j++)
 			if (S[j] == false && dist[j] < min) { u = j; min = dist[j]; }
 		S[u] = true;
-		for (k = 0; k < n; k++) {
-			w = G.getWeight(u, k);
+		for (int k = 0; k < n; k++) {
+			w = getWeight(u, k);
 			if (S[k] == false && w < max && dist[u] + w < dist[k]) {
 				dist[k] = dist[k] + w;
 				path[k] = u;
@@ -30,3 +29,29 @@ int getnumV(Graphlink<T>& G, T v, int dist[], int path[]) {
 		}
 	}
 };
+template <typename T>
+void Graphlink<T>::printShortestPath(T vertex) {
+	int num = getnumVertices();
+	int* dist = new int[num];
+	int* path = new int[num];
+	int* d = new int[num];
+	int v = getVertexPos(vertex);
+	shortestPath(v, dist, path);
+	cout << "顶点" << vertex << "的路由选择表：" << endl;
+	for (int i = 0; i < num; ++i) {
+		if (i != v) {
+			int k = 0;
+			for (int j = i; j != v; ++k) {
+				d[k] = j;
+				j = path[j];
+			}
+			cout << "顶点" << getValue(i) << "的最短路径为：" << getValue(v);
+			for (int j = k-1; j>=0 ; --j) {cout << ' ' << getValue(d[j]) ;}
+			cout << endl;
+			cout << "最短路径长度：" << dist[i] << endl;
+		}
+	}
+	delete[]d;
+	delete[]dist;
+	delete[]path;
+}

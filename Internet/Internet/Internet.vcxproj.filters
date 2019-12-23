@@ -42,6 +42,9 @@
     <ClInclude Include="get-inf.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="output.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.TXT">

@@ -4,13 +4,14 @@
 int main() {
 	Graphlink<int> graph(20);
 	int m, n=0, cost;
-	char ch=0;
+	char ch='c';
 	ifstream in;
-	in.open("input.TXT");
+	in.open("input.txt");
 	while (ch != '\n') {//ÊäÈë½Úµã
 		in >> m;
-		graph.insertVertex(m);
-		ch=cin.get();
+		if(!graph.insertVertex(m))
+			cerr<<"´íÎó£¡£¡£¡";
+		in.get(ch);
 	}
 	while (in.eof() == false) {
 		in >> m >> n >> cost;
@@ -18,8 +19,9 @@ int main() {
 		n = graph.getVertexPos(n);
 		graph.insertEdge(m, n, cost);
 	}
-	
-	graph.RemoveVertex(m);
-	graph.RemoveEdge(m, n);
+	cin >> m;
+	graph.printShortestPath(m);
+	in.close();
+	cout << graph;
 	return 0;
 }
