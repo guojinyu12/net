@@ -1,4 +1,5 @@
 #include"con-desstruct.h"
 #include"insert.h"
 #include"remove.h"
+#include"get-inf.h"
 #include"dijkstra.h"

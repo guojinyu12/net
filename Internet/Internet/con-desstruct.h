@@ -1,8 +1,8 @@
 #include"Graphlink.h"
 template <typename T>
-Graphlink<T>::Graphlink(int sz) :numVertices(0), numEdges(0) {
-	int max=maxVertices > sz? maxVertices:sz;
-	Table = new Vertex<T>[max];//创建存储空间
+Graphlink<T>::Graphlink(int sz) :numVertices(0), numEdges(0),maxVertices(20){
+	maxVertices =maxVertices > sz? maxVertices:sz;
+	Table = new Vertex<T>[maxVertices];//创建存储空间
 	if (Table == nullptr) { cerr << "分配失败!!!" << endl; exit(1); }
 }
 template <typename T>

@@ -34,18 +34,18 @@ bool Graphlink<T>::RemoveEdge(int v1, int v2)
 }
 
 template<typename T>
-bool Graphlink<T>::RemoveVertex(const T& vertex)
+bool Graphlink<T>::RemoveVertex(const T& v)
 {
-	if (numVertices == 1 || vertex<0 || vertex>=numVertices)return false;
+	if (numVertices == 0 || v<0 || v>=numVertices)return false;
 	Edge* p, * s, * t;
 	int i, k;
-	while (Table[vertex].adj != nullptr)
+	while (Table[v].adj != nullptr)
 	{
-		p = Table[vertex].adj;
+		p = Table[v].adj;
 		k = p->dest;
 		s = Table[k].adj;
 		t = nullptr;
-		while (s != nullptr && s->dest != vertex)
+		while (s != nullptr && s->dest != v)
 		{
 			t = s;
 			s = s->link;
@@ -56,13 +56,14 @@ bool Graphlink<T>::RemoveVertex(const T& vertex)
 			else t->link = s->link;
 			delete s;
 		}
-		Table[vertex].adj = p->link;
+		Table[v].adj = p->link;
 		delete p;
 		numEdges--;
 	}
 	numVertices--;
-	Table[vertex].data = Table[numVertices].data;
-	p = Table[vertex].adj = Table[numVertices].adj;
+	Table[v].data = Table[numVertices].data;
+	p = Table[v].adj = Table[numVertices].adj;
+
 	while (p != nullptr)
 	{
 		s = Table[p->dest].adj;
@@ -76,6 +77,7 @@ bool Graphlink<T>::RemoveVertex(const T& vertex)
 			else
 				s = s->link;
 		}
+		p = p->link;
 	}
 	return true;
 }
