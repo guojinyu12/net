@@ -1,12 +1,6 @@
 #include"using.h"
 #include"Edge-Vertex.h"
 template <typename T>
-class Graphlink;
-template <typename T>
-istream& input(istream& in, Graphlink<T>& G, const int row);//输入
-template <typename T>
-ostream& operator << (ostream& out, Graphlink<T>& G);//输出 
-template <typename T>
 class Graphlink {   //图的类定义
 	int maxV;//最大顶点数，总地板数
 	int numV;//黑色地板数
@@ -27,6 +21,4 @@ public:
 	bool RemoveEdge(int v1, int v2);//删除边
 	int getFirstNeighbor(int v);//取v的第一个邻接顶点
 	int getNextNeighbor(int v, int w);//取v的邻接顶点w的下一邻接顶点 	
-	friend istream& input <>(istream& in, Graphlink<T>& G, const int row);//输入
-	friend ostream& operator << <>(ostream& out, Graphlink<T>& G);//输出 
 };
