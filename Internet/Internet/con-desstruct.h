@@ -1,7 +1,7 @@
 #include"Graphlink.h"
 template <typename T>
-Graphlink<T>::Graphlink(int sz) :numV(0), numE(0) {
-	int max=maxV > sz? maxV:sz;
+Graphlink<T>::Graphlink(int sz) :numVertices(0), numEdges(0) {
+	int max=maxVertices > sz? maxVertices:sz;
 	Table = new Vertex<T>[max];//´´½¨´æ´¢¿Õ¼ä
 	if (Table == nullptr) { cerr << "·ÖÅäÊ§°Ü!!!" << endl; exit(1); }
 }
@@ -9,7 +9,7 @@ template <typename T>
 Graphlink<T>::~Graphlink() {
 	if (Table != nullptr) {//´æÔÚ¶¥µã
 		Edge* p = nullptr;
-		for (int i = numV - 1; i >= 0; i--) {
+		for (int i = numVertices - 1; i >= 0; i--) {
 			p = Table[i].adj;
 			while (p != nullptr) {//É¾³ý±ß
 				Table[i].adj = p->link;

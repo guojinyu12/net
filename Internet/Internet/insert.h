@@ -9,8 +9,8 @@ inline bool Graphlink<T>::insertEdge(int v1, int v2,int cost)
 }
 template <typename T>
 inline bool Graphlink<T>::insertVertex(const T& vertex) {//插入一个顶点
-	if (numV < maxV) {
-		Table[numV++].data = vertex;
+	if (numVertices < maxVertices) {
+		Table[numVertices++].data = vertex;
 		return true;
 	}
 	return false;

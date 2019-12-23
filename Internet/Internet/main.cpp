@@ -5,9 +5,11 @@ int main() {
 	int m, n, cost;
 	cin >> m;
 	graph.insertVertex(m);
+	graph.RemoveVertex(m);
 	cin >> m >> n >> cost;
 	m = graph.getVertexPos(m);
 	m = graph.getVertexPos(n);
 	graph.insertEdge(m, n, cost);
+	graph.RemoveEdge(m, n);
 	return 0;
 }
