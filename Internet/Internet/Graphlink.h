@@ -1,3 +1,5 @@
+#ifndef GRAPHLINK_H_
+#define GRAPHLINK_H_
 #include"using.h"
 #include"Edge-Vertex.h"
 template <typename T>
@@ -22,3 +24,4 @@ public:
 	int getFirstNeighbor(int v);//取v的第一个邻接顶点
 	int getNextNeighbor(int v, int w);//取v的邻接顶点w的下一邻接顶点 	
 };
+#endif // !GRAPHLINK_H_

@@ -1,3 +1,5 @@
+#ifndef EDGEVERTEX_H_
+#define EDGEVERTEX_H_
 struct Edge {//边结点的定义
 	int dest;	//边的另一顶点位置
 	int cost;
@@ -14,3 +16,4 @@ struct Vertex {//顶点的定义
 	Vertex() :adj(nullptr) {}//默认构造函数
 	Vertex(T x) :data(x), adj(nullptr) {}//构造函数
 };
+#endif // !EDGEVERTEX_H_

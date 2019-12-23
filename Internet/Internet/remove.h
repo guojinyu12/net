@@ -4,7 +4,7 @@ bool Graphlink<T>::RemoveEdge(int v1, int v2)
 {
 	if (v1 != -1 && v2 != -1)
 	{
-		Edge<T>* p = Table[v1].adj, * q = nullptr, * s = p;
+		Edge* p = Table[v1].adj, * q = nullptr, * s = p;
 		while (p != nullptr && p->dest != v2)
 		{
 			q = p;
@@ -37,7 +37,7 @@ template<typename T>
 bool Graphlink<T>::RemoveVertex(const T& vertex)
 {
 	if (numV == 1 || vertex<0 || vertex>=numV)return false;
-	Edge<T>* p, * s, * t;
+	Edge* p, * s, * t;
 	int i, k;
 	while (Table[vertex].adj != nullptr)
 	{
