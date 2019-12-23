@@ -1,4 +1,4 @@
-#pragma once
+#include"Graphlink.h"
 template <typename T>
 int Graphlink<T>::getVertexPos(const T vertex) {//给出顶点vertex在图中的位置，下标
 	for (int i = 0; i < maxV; i++)

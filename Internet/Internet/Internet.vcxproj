@@ -146,6 +146,7 @@
     <ClInclude Include="insert.h" />
     <ClInclude Include="remove.h" />
     <ClInclude Include="using.h" />
+    <ClInclude Include="标头1.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.TXT" />
