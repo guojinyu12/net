@@ -3,24 +3,11 @@
 #include"all.h"
 int main() 
 {
-	cout << "     网络路由器表操作系统" << endl;
-	cout << "*******************************" << endl;
-	cout << " 1.插入点" << endl;
-	cout << " 2.插入边" << endl;
-	cout << " 3.删除点" << endl;
-	cout << " 4.删除边" << endl;
-	cout << " 5.显示路由表" << endl;
-	cout << " 6.显示路由器路线图" << endl;
-	cout << "*******************************" << endl;
-	cout << "请输入指定选择方案:" << endl;
-
 	Graphlink<int> graph(20);
 	int m, n = 0, cost;
 	char ch = 'c';
 	ifstream in;
 	in.open("input.txt");
-	int key;
-	cin >> key;
 	while (ch != '\n') {//输入节点
 		in >> m;
 		if (!graph.insertVertex(m))
@@ -34,8 +21,20 @@ int main()
 		in >> m;
 	}
 	in.close();
-	while (true) 
+	cout << "     网络路由器表操作系统" << endl;
+	cout << "*******************************" << endl;
+	cout << " 1.插入点" << endl;
+	cout << " 2.插入边" << endl;
+	cout << " 3.删除点" << endl;
+	cout << " 4.删除边" << endl;
+	cout << " 5.显示路由表" << endl;
+	cout << " 6.显示路由器路线图" << endl;
+	cout << "*******************************" << endl;
+	int key;
+	while (cin) 
 	{
+		cout << "请输入指定选择方案:" << endl;
+		cin >> key;
 		switch (key)
 		{
 		case 0:
@@ -46,7 +45,7 @@ int main()
 			graph.insertVertex(m);
 			break;
 		case 2:
-			cout << "请输入要添加边的两个路由器" << endl;
+			cout << "请输入要添加边的两个路由器及代价" << endl;
 			cin >> m >> n >> cost;
 			graph.insertEdge(m, n, cost);
 			graph.insertEdge(n, m, cost);
@@ -62,7 +61,8 @@ int main()
 			graph.RemoveEdge(m, n);
 			break;
 		case 5:
-			cout << "显示路由表" << endl;
+			cout << "请输入起点路由器" << endl;
+			cin >> m;
 			graph.printShortestPath(m);
 			break;
 		case 6:

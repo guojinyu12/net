@@ -41,7 +41,7 @@ bool Graphlink<T>::RemoveVertex(const T& vertex)
 	int v = getVertexPos(vertex);
 	if (numVertices == 0 || v<0 || v>=numVertices)return false;
 	Edge* p, * s, * t;
-	int i, k;
+	int k;
 	while (Table[v].adj != nullptr)
 	{
 		p = Table[v].adj;
