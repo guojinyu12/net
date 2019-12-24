@@ -45,23 +45,22 @@ void Graphlink<T>::printShortestPath(T vertex) {
 	shortestPath(v, dist, path);
 	cout << "路由器" << vertex << "的路由选择表：" << endl;
 	for (int i = 0; i < num; ++i) {
-		if (i != v) {
-			int k = 0;
-			for (int j = i; j != v&&j!=-1; ) {
-				d[k] = j;
-				j = path[j]; ++k;
-			}
-			if (dist[i] != max) {
-				cout << "到路由器" << getValue(i) <<endl<< "最短路径为：" << getValue(v);
-				for (int j = k - 1; j >= 0; --j) { cout << ' ' << getValue(d[j]); }
-				cout << endl;
-				cout << "下一跳为" << getValue(d[k - 1])<<endl;
-				cout << "最短路径长度：";
-				cout << dist[i] << endl << endl;
-			}
-			else{
-				cout << "不可到达路由器" << getValue(i) <<endl;
-			}
+		int k = 0;
+		for (int j = i; j != v && j != -1; ) {
+			d[k] = j;
+			j = path[j]; ++k;
+		}
+		if (dist[i] != max) {
+			cout << "到路由器" << getValue(i) << endl << "最短路径为：" << getValue(v);
+			for (int j = k - 1; j >= 0; --j) { cout << ' ' << getValue(d[j]); }
+			cout << endl;
+			if(k!=0)
+				cout << "下一跳为" << getValue(d[k - 1]) << endl;
+			cout << "最短路径长度：";
+			cout << dist[i] << endl << endl;
+		}
+		else {
+			cout << "不可到达路由器" << getValue(i) << endl;
 		}
 	}
 	delete[]d;
