@@ -33,9 +33,5 @@ int main() {
 	cin >> m;
 	if (graph.RemoveVertex(m));
 	cout << graph;
-
-	
-
-
 	return 0;
 }
