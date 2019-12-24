@@ -22,7 +22,7 @@ bool Graphlink<T>::RemoveEdge(int v1, int v2)
 		s = p;
 		while (p->dest != v1) 
 		{
-			p = q;
+			q = p;
 			p = p->link;
 		}
 		if (p == s)Table[v2].adj = p->link;
