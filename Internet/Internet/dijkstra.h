@@ -39,7 +39,7 @@ void Graphlink<T>::printShortestPath(T vertex) {
 	int* d = new int[num] {};
 	int v = getVertexPos(vertex);
 	shortestPath(v, dist, path);
-	cout << "顶点" << vertex << "的路由选择表：" << endl;
+	cout << "路由器" << vertex << "的路由选择表：" << endl;
 	for (int i = 0; i < num; ++i) {
 		if (i != v) {
 			int k = 0;
@@ -47,7 +47,7 @@ void Graphlink<T>::printShortestPath(T vertex) {
 				d[k] = j;
 				j = path[j]; ++k;
 			}
-			cout << "顶点" << getValue(i) << "的最短路径为：" << getValue(v);
+			cout << "到路由器" << getValue(i) << "的最短路径为：" << getValue(v);
 			for (int j = k-1; j>=0 ; --j) {cout << ' ' << getValue(d[j]) ;}
 			cout << endl;
 			cout << "最短路径长度：" << dist[i] << endl;
