@@ -2,31 +2,30 @@
 #include"Edge-Vertex.h"
 template<typename T>
 void Graphlink<T>::shortestPath(int v, int* dist, int* path) {
-	int n = getnumVertices();
-	bool* know = new bool[n];//当i路径确定时，know[i]=true
+	int num = getnumVertices();
+	bool* know = new bool[num];//当i路径确定时，know[i]=true
 	int w, min;
-	for (int i = 0; i < n; i++) {//初始化
+	for (int i = 0; i < num; i++) {//初始化
 		dist[i] = getWeight(v, i);
 		know[i] = false;//初始化
 		if (i != v&&dist[i]<max )path[i] = v;
 		else path[i] = -1;
 	}
 	know[v] = true;dist[v] = 0;
-	for (int i = 0; i < n; i++) {
+	int u = v;
+	for (int i = 0; i < num; i++) {
 		min = max;
-		cout << min;
-		int u = v;
-		for (int j = 0; j < n; j++)
-			if (know[j] == false && dist[j] < min) 
+		for (int j = 0; j < num; j++) {
+			if (know[j] == false && dist[j] < min)
 			{
-				u = j; min = dist[j]; 
+				u = j; min = dist[j];
 			}
+		}
 		know[u] = true;
-		for (int k = 0; k < n; k++) {
+		for (int k = 0; k < num; k++) {
 			w = getWeight(u, k);
 			if (know[k] == false && w < max && dist[u] + w < dist[k]) {
-				cout <<k << " " <<u << " " << w << endl;
-				dist[k] = dist[k] + w;
+				dist[k] = dist[u] + w;
 				path[k] = u;
 			}
 		}
