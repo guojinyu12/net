@@ -13,25 +13,27 @@ int main() {
 			cerr<<"´íÎó£¡£¡£¡";
 		in.get(ch);
 	}
-	cin >> m;
+	in >> m;
 	while (in.eof() == false) {
 		in >> n >> cost;
-		m = graph.getVertexPos(m);
-		n = graph.getVertexPos(n);
 		graph.insertEdge(m, n, cost);
 		in >> m;
 	}
 	//graph.printShortestPath(m);
 	in.close();
-	//cout << graph;
-
-
-	/*Graphlink<int> graph(20);
-	int m, n = 0;
-	char ch;
-	cin >> m >> n;*/
-	graph.RemoveEdge(m, n);
 	cout << graph;
+
+
+	///*Graphlink<int> graph(20);
+	//int m, n = 0;
+	//char ch;
+	cin >> m >> n;
+	if(graph.RemoveEdge(m, n));
+	cout << graph;
+	cin >> m;
+	if (graph.RemoveVertex(m));
+	cout << graph;
+
 	
 
 
