@@ -1,7 +1,9 @@
 #include"Graphlink.h"
 template<typename T>
-bool Graphlink<T>::RemoveEdge(int v1, int v2)
+bool Graphlink<T>::RemoveEdge(T vertex1, T vertex2)
 {
+	int v1 = getVertexPos(vertex1);
+	int v2 = getVertexPos(vertex2);
 	if (v1 != -1 && v2 != -1)
 	{
 		Edge* p = Table[v1].adj, * q = nullptr, * s = p;
@@ -34,8 +36,9 @@ bool Graphlink<T>::RemoveEdge(int v1, int v2)
 }
 
 template<typename T>
-bool Graphlink<T>::RemoveVertex(const T& v)
+bool Graphlink<T>::RemoveVertex(const T& vertex)
 {
+	int v = getVertexPos(vertex);
 	if (numVertices == 0 || v<0 || v>=numVertices)return false;
 	Edge* p, * s, * t;
 	int i, k;

@@ -24,7 +24,7 @@ public:
 	int getWeight(int v1, int v2);//代价
 	bool RemoveVertex(const T& vertex);//删除点
 	bool insertEdge(int v1, int v2,int cost);//插入一条边
-	bool RemoveEdge(int v1, int v2);//删除边
+	bool RemoveEdge(T v1, T v2);//删除边
 	int getFirstNeighbor(int v);//取v的第一个邻接顶点
 	int getNextNeighbor(int v, int w);//取v的邻接顶点w的下一邻接顶点 
 	int getNeighbor(Edge*& pEdge);//取v关于边pEdge的邻接顶点
