@@ -3,14 +3,14 @@ template <typename T>
 int Graphlink<T>::getWeight(int v1, int v2) {
 	if (v1 != -1 && v2 != -1) {
 		Edge* p = Table[v1].adj;
-		while (p != nullptr && p->dest) {
+		while (p != nullptr) {
+			if (p->dest==v2) {
+				return p->cost;
+			}
 			p = p->link;
 		}
-		if (p != nullptr) {
-			return p->cost;
-		}
 	}
-	return -1;
+	return max;
 }
 template <typename T>
 int Graphlink<T>::getVertexPos(const T vertex) {//给出顶点vertex在图中的位置，下标

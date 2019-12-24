@@ -1,6 +1,7 @@
 #ifndef GRAPHLINK_H_
 #define GRAPHLINK_H_
 #include"Edge-Vertex.h"
+const int max = 0x7ffff;
 template <typename T>
 class Graphlink;
 template <typename T>
