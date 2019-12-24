@@ -22,6 +22,6 @@ int main() {
 	cin >> m;
 	graph.printShortestPath(m);
 	in.close();
-	cout << graph;
+	//cout << graph;
 	return 0;
 }
