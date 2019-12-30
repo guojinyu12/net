@@ -53,11 +53,11 @@ void Graphlink<T>::printShortestPath(T vertex) {
 		if (dist[i] != max) {
 			cout << "到路由器" << getValue(i) << endl << "最短路径为：" << getValue(v);
 			for (int j = k - 1; j >= 0; --j) { cout << ' ' << getValue(d[j]); }
-			cout << endl << "下一个路由器为";
+			cout << endl << "下一跳为";
 			if (k != 0)
 				cout << getValue(d[k - 1]) << endl;
 			else
-				cout << "自己" << endl;
+				cout << "--" << endl;
 			cout << "最短路径长度：";
 			cout << dist[i] << endl << endl;
 		}
