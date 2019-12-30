@@ -45,7 +45,7 @@ int main()
 			graph.insertVertex(m);
 			break;
 		case 2:
-			cout << "请输入要添加边的两个路由器及代价" << endl;
+			cout << "请输入要添加边的两个路由器及距离" << endl;
 			cin >> m >> n >> cost;
 			graph.insertEdge(m, n, cost);
 			graph.insertEdge(n, m, cost);

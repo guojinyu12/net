@@ -21,7 +21,7 @@ public:
 	T getValue(int i) { return Table[i].data; }//取位置为i的顶点的值
 	int getVertexPos(const T vertex);//给出顶点vertex在图中的位置，下标
 	bool insertVertex(const T& vertex);//插入一个顶点
-	int getWeight(int v1, int v2);//代价
+	int getWeight(int v1, int v2);//距离
 	bool RemoveVertex(const T& vertex);//删除点
 	bool insertEdge(int v1, int v2,int cost);//插入一条边
 	bool RemoveEdge(T v1, T v2);//删除边
