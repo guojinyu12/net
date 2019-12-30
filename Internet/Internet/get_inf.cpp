@@ -1,9 +1,9 @@
-#include"Graphlink.h"
+#include"Graph.h"
 int Graphlink::getWeight(int v1, int v2) {
 	if (v1 != -1 && v2 != -1) {
 		Edge* p = Table[v1].adj;
 		while (p != nullptr) {
-			if (p->dest==v2) {
+			if (p->dest == v2) {
 				return p->cost;
 			}
 			p = p->link;
@@ -11,13 +11,11 @@ int Graphlink::getWeight(int v1, int v2) {
 	}
 	return max;
 }
-
 int Graphlink::getVertexPos(const int vertex) {//给出顶点vertex在图中的位置，下标
 	for (int i = 0; i < maxVertices; i++)
 		if (Table[i].data == vertex)return i;
 	return -1;
 }
-
 int Graphlink::getFirstNeighbor(int v) {
 	if (v != -1) {//顶点存在
 		if (Table[v].adj != nullptr)//有边

@@ -1,10 +1,9 @@
-#include"Graphlink.h"
+#include "Graph.h"
 Graphlink::Graphlink(int sz) :numVertices(0), numEdges(0),maxVertices(20){
 	maxVertices =maxVertices > sz? maxVertices:sz;
 	Table = new Vertex[maxVertices];//创建存储空间
 	if (Table == nullptr) { cerr << "分配失败!!!" << endl; exit(1); }
 }
-
 Graphlink::~Graphlink() {
 	if (Table != nullptr) {//存在顶点
 		Edge* p = nullptr;

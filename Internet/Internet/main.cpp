@@ -1,6 +1,6 @@
 #include<iostream>
 #include<fstream>
-#include"Graphlink.h"
+#include"Graph.h"
 int main() 
 {
 	Graphlink graph(20);

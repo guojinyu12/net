@@ -1,4 +1,4 @@
-#include"Graphlink.h"
+#include"Graph.h"
 #include<iomanip>
 void Graphlink::shortestPath(int v, int* dist, int* path) {
 	int num = getnumVertices();
@@ -7,10 +7,10 @@ void Graphlink::shortestPath(int v, int* dist, int* path) {
 	for (int i = 0; i < num; i++) {//初始化
 		dist[i] = getWeight(v, i);
 		know[i] = false;//初始化
-		if (i != v&&dist[i]<max )path[i] = v;
+		if (i != v && dist[i] < max)path[i] = v;
 		else path[i] = -1;
 	}
-	know[v] = true;dist[v] = 0;
+	know[v] = true; dist[v] = 0;
 	int u = v;
 	for (int i = 0; i < num; i++) {
 		min = max;
@@ -39,7 +39,7 @@ void Graphlink::printShortestPath(int vertex) {
 	int* d = new int[num] {};
 	int v = getVertexPos(vertex);
 	if (v == -1) {
-		cout << "路由器" << vertex << "不存在。"<<endl;
+		cout << "路由器" << vertex << "不存在。" << endl;
 		return;
 	}
 	shortestPath(v, dist, path);
@@ -51,7 +51,7 @@ void Graphlink::printShortestPath(int vertex) {
 		}
 		if (dist[i] != max) {
 			if (k != 0)
-				next[i]=getValue(d[k - 1]);
+				next[i] = getValue(d[k - 1]);
 		}
 	}
 	cout << "路由器" << vertex << "的路由表：" << endl;
@@ -61,7 +61,7 @@ void Graphlink::printShortestPath(int vertex) {
 		if (i != v) {
 			if (dist[i] != max) {
 				cout << std::setw(10) << getValue(i) << std::setw(10)
-					<< next[i]<< std::setw(10) << dist[i] << endl;
+					<< next[i] << std::setw(10) << dist[i] << endl;
 			}
 		}
 		else

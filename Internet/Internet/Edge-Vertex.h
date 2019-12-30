@@ -13,14 +13,12 @@ struct Edge {//边结点的定义
 inline ostream& operator << (ostream& os, Edge& e) {//输出
 	return os << e.dest<<"  "<<e.cost;
 }
-
 struct Vertex {//顶点的定义
 	int data;//顶点内容
 	Edge* adj;//边链表的头指针
 	Vertex() :adj(nullptr) {}//默认构造函数
 	Vertex(int x) :data(x), adj(nullptr) {}//构造函数
 };
-
 inline ostream& operator << (ostream& os, Vertex& v) {//输出
 	return os << v.data;
 }

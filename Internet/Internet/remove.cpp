@@ -1,4 +1,4 @@
-#include"Graphlink.h"
+#include"Graph.h"
 bool Graphlink::RemoveEdge(int vertex1, int vertex2)
 {
 	int v1 = getVertexPos(vertex1);
@@ -21,7 +21,7 @@ bool Graphlink::RemoveEdge(int vertex1, int vertex2)
 		p = Table[v2].adj;
 		q = nullptr;
 		s = p;
-		while (p->dest != v1) 
+		while (p->dest != v1)
 		{
 			q = p;
 			p = p->link;
@@ -36,7 +36,7 @@ bool Graphlink::RemoveEdge(int vertex1, int vertex2)
 bool Graphlink::RemoveVertex(const int& vertex)
 {
 	int v = getVertexPos(vertex);
-	if (numVertices == 0 || v<0 || v>=numVertices)return false;
+	if (numVertices == 0 || v < 0 || v >= numVertices)return false;
 	Edge* p, * s, * t;
 	int k;
 	while (Table[v].adj != nullptr)

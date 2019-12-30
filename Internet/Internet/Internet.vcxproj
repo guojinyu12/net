@@ -138,21 +138,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="con-desstruct.cpp" />
-    <ClInclude Include="dijkstra.cpp" />
     <ClInclude Include="Edge-Vertex.h" />
-    <ClInclude Include="Graphlink.h" />
-    <ClInclude Include="insert.cpp" />
-    <ClInclude Include="remove.cpp" />
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="using.h" />
-    <ClInclude Include="get-inf.cpp" />
-    <ClInclude Include="output.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.TXT" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="get_inf.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="insert-out.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="remove.cpp" />
+    <ClCompile Include="dijkstra.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

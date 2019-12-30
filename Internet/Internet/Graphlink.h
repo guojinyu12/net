@@ -2,11 +2,7 @@
 #define GRAPHLINK_H_
 #include"Edge-Vertex.h"
 const int max = 0x7ffff;
-
 class Graphlink;
-
-ostream& operator << (ostream& os, Graphlink& G);
-
 class Graphlink {   //图的类定义
 	int maxVertices;//最大顶点数，总地板数
 	int numVertices;//黑色地板数
@@ -30,7 +26,6 @@ public:
 	int getNeighbor(Edge*& pEdge);//取v关于边pEdge的邻接顶点
 	void shortestPath(int v, int* dist, int* path);//非负权值的最短路径
 	void printShortestPath(int v);
-	
 	friend ostream& operator << (ostream& os, Graphlink& G);
 };
 #endif // !GRAPHLINK_H_
