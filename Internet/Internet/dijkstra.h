@@ -1,5 +1,6 @@
 #include"Graphlink.h"
 #include"Edge-Vertex.h"
+#include<iomanip>
 template<typename T>
 void Graphlink<T>::shortestPath(int v, int* dist, int* path) {
 	int num = getnumVertices();
@@ -36,6 +37,7 @@ void Graphlink<T>::printShortestPath(T vertex) {
 	int num = getnumVertices();
 	int* dist = new int[num] {};
 	int* path = new int[num] {};
+	int* next = new int[num] {};
 	int* d = new int[num] {};
 	int v = getVertexPos(vertex);
 	if (v == -1) {
@@ -43,7 +45,6 @@ void Graphlink<T>::printShortestPath(T vertex) {
 		return;
 	}
 	shortestPath(v, dist, path);
-	cout << "路由器" << vertex << "的路由选择表：" << endl;
 	for (int i = 0; i < num; ++i) {
 		int k = 0;
 		for (int j = i; j != v && j != -1; ) {
@@ -51,20 +52,25 @@ void Graphlink<T>::printShortestPath(T vertex) {
 			j = path[j]; ++k;
 		}
 		if (dist[i] != max) {
-			cout << "到路由器" << getValue(i) << endl << "最短路径为：" << getValue(v);
-			for (int j = k - 1; j >= 0; --j) { cout << ' ' << getValue(d[j]); }
-			cout << endl << "下一个路由器为";
 			if (k != 0)
-				cout << getValue(d[k - 1]) << endl;
-			else
-				cout << "自己" << endl;
-			cout << "最短路径长度：";
-			cout << dist[i] << endl << endl;
-		}
-		else {
-			cout << "不可到达路由器" << getValue(i) << endl;
+				next[i]=getValue(d[k - 1]);
 		}
 	}
+	cout << "路由器" << vertex << "的路由表：" << endl;
+	cout << std::setw(10) << "路由器" << std::setw(10) << "下一跳"
+		<< std::setw(10) << "距离" << endl;
+	for (int i = 0; i < num; ++i) {
+		if (i != v) {
+			if (dist[i] != max) {
+				cout << std::setw(10) << i + 1 << std::setw(10)
+					<< next[i]<< std::setw(10) << dist[i] << endl;
+			}
+		}
+		else
+			cout << std::setw(10) << i + 1 << std::setw(10)
+			<< i+1 << std::setw(10) << dist[i] << endl;
+	}
+	delete[]next;
 	delete[]d;
 	delete[]dist;
 	delete[]path;
