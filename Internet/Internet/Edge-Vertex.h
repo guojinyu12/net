@@ -19,7 +19,4 @@ struct Vertex {//顶点的定义
 	Vertex() :adj(nullptr) {}//默认构造函数
 	Vertex(int x) :data(x), adj(nullptr) {}//构造函数
 };
-inline ostream& operator << (ostream& os, Vertex& v) {//输出
-	return os << v.data;
-}
 #endif // !EDGEVERTEX_H_

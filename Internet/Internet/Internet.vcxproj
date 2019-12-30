@@ -146,6 +146,7 @@
     <Text Include="input.TXT" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Edge-Vertex.cpp" />
     <ClCompile Include="get_inf.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="insert-out.cpp" />
