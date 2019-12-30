@@ -35,6 +35,7 @@ bool Graphlink::RemoveEdge(int vertex1, int vertex2)
 }
 bool Graphlink::RemoveVertex(const int& vertex)
 {
+	cout << "³Â´Ï" << endl;
 	int v = getVertexPos(vertex);
 	if (numVertices == 0 || v < 0 || v >= numVertices)return false;
 	Edge* p, * s, * t;
