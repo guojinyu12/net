@@ -1,5 +1,4 @@
 #include"Graphlink.h"
-
 Graphlink::Graphlink(int sz) :numVertices(0), numEdges(0),maxVertices(20){
 	maxVertices =maxVertices > sz? maxVertices:sz;
 	Table = new Vertex[maxVertices];//´´½¨´æ´¢¿Õ¼ä

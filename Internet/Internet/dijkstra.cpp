@@ -1,7 +1,5 @@
 #include"Graphlink.h"
-#include"Edge-Vertex.h"
 #include<iomanip>
-template<typename int>
 void Graphlink::shortestPath(int v, int* dist, int* path) {
 	int num = getnumVertices();
 	bool* know = new bool[num];//当i路径确定时，know[i]=true

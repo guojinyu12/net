@@ -1,5 +1,4 @@
 #include"Graphlink.h"
-
 int Graphlink::getWeight(int v1, int v2) {
 	if (v1 != -1 && v2 != -1) {
 		Edge* p = Table[v1].adj;
