@@ -10,13 +10,12 @@ struct Edge {//边结点的定义
 	int getWeight() { return cost; }
 	bool operator != (Edge& R)const { return dest != R.dest; }//不等于比较运算符重载
 };
-inline ostream& operator << (ostream& os, Edge& e) {//输出
-	return os << e.dest<<"  "<<e.cost;
-}
 struct Vertex {//顶点的定义
 	int data;//顶点内容
 	Edge* adj;//边链表的头指针
 	Vertex() :adj(nullptr) {}//默认构造函数
 	Vertex(int x) :data(x), adj(nullptr) {}//构造函数
 };
+ostream& operator << (ostream& os, Edge& e);
+ostream& operator << (ostream& os, Vertex& v);
 #endif // !EDGEVERTEX_H_
