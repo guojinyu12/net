@@ -1,5 +1,5 @@
 #include"Graph.h"
-bool Graphlink::insertEdge(int vertex1, int vertex2, int cost)
+bool Graphlink::insertEdge(int vertex1, int vertex2, int cost)//¹ù½ğÓî
 {
 	int v1 = getVertexPos(vertex1);
 	int v2 = getVertexPos(vertex2);
