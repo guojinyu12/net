@@ -1,9 +1,9 @@
 #include<iostream>
 #include<fstream>
-#include"all.h"
+#include"Graphlink.h"
 int main() 
 {
-	Graphlink<int> graph(20);
+	Graphlink graph(20);
 	int m, n = 0, cost;
 	char ch = 'c';
 	ifstream in;

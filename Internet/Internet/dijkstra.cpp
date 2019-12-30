@@ -1,8 +1,8 @@
 #include"Graphlink.h"
 #include"Edge-Vertex.h"
 #include<iomanip>
-template<typename T>
-void Graphlink<T>::shortestPath(int v, int* dist, int* path) {
+template<typename int>
+void Graphlink::shortestPath(int v, int* dist, int* path) {
 	int num = getnumVertices();
 	bool* know = new bool[num];//当i路径确定时，know[i]=true
 	int w, min;
@@ -32,8 +32,8 @@ void Graphlink<T>::shortestPath(int v, int* dist, int* path) {
 		}
 	}
 };
-template <typename T>
-void Graphlink<T>::printShortestPath(T vertex) {
+
+void Graphlink::printShortestPath(int vertex) {
 	int num = getnumVertices();
 	int* dist = new int[num] {};
 	int* path = new int[num] {};

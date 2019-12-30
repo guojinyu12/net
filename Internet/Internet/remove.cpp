@@ -1,6 +1,6 @@
 #include"Graphlink.h"
-template<typename T>
-bool Graphlink<T>::RemoveEdge(T vertex1, T vertex2)
+template<typename int>
+bool Graphlink::RemoveEdge(int vertex1, int vertex2)
 {
 	int v1 = getVertexPos(vertex1);
 	int v2 = getVertexPos(vertex2);
@@ -35,8 +35,8 @@ bool Graphlink<T>::RemoveEdge(T vertex1, T vertex2)
 	return false;
 }
 
-template<typename T>
-bool Graphlink<T>::RemoveVertex(const T& vertex)
+template<typename int>
+bool Graphlink::RemoveVertex(const int& vertex)
 {
 	int v = getVertexPos(vertex);
 	if (numVertices == 0 || v<0 || v>=numVertices)return false;

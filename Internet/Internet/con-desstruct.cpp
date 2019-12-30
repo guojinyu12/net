@@ -1,12 +1,12 @@
 #include"Graphlink.h"
-template <typename T>
-Graphlink<T>::Graphlink(int sz) :numVertices(0), numEdges(0),maxVertices(20){
+
+Graphlink::Graphlink(int sz) :numVertices(0), numEdges(0),maxVertices(20){
 	maxVertices =maxVertices > sz? maxVertices:sz;
-	Table = new Vertex<T>[maxVertices];//创建存储空间
+	Table = new Vertex[maxVertices];//创建存储空间
 	if (Table == nullptr) { cerr << "分配失败!!!" << endl; exit(1); }
 }
-template <typename T>
-Graphlink<T>::~Graphlink() {
+
+Graphlink::~Graphlink() {
 	if (Table != nullptr) {//存在顶点
 		Edge* p = nullptr;
 		for (int i = numVertices - 1; i >= 0; i--) {

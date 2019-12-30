@@ -15,34 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="con-desstruct.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="dijkstra.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Edge-Vertex.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Graphlink.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="insert.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="remove.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="using.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="all.h">
+    <ClInclude Include="con-desstruct.cpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="get-inf.h">
+    <ClInclude Include="dijkstra.cpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="output.h">
+    <ClInclude Include="get-inf.cpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="insert.cpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="output.cpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="remove.cpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,5 @@
 #include"Graphlink.h"
-template<typename T>
-inline bool Graphlink<T>::insertEdge(int vertex1, int vertex2,int cost)
+inline bool Graphlink::insertEdge(int vertex1, int vertex2,int cost)
 {
 	int v1 = getVertexPos(vertex1);
 	int v2 = getVertexPos(vertex2);
@@ -10,8 +9,8 @@ inline bool Graphlink<T>::insertEdge(int vertex1, int vertex2,int cost)
 	++numEdges;
 	return true;
 }
-template <typename T>
-inline bool Graphlink<T>::insertVertex(const T& vertex) {//插入一个顶点
+
+inline bool Graphlink::insertVertex(const int& vertex) {//插入一个顶点
 	if (numVertices < maxVertices) {
 		Table[numVertices].data = vertex;
 		++numVertices;

@@ -13,15 +13,15 @@ struct Edge {//边结点的定义
 inline ostream& operator << (ostream& os, Edge& e) {//输出
 	return os << e.dest<<"  "<<e.cost;
 }
-template <typename T>
+
 struct Vertex {//顶点的定义
-	T data;//顶点内容
+	int data;//顶点内容
 	Edge* adj;//边链表的头指针
 	Vertex() :adj(nullptr) {}//默认构造函数
-	Vertex(T x) :data(x), adj(nullptr) {}//构造函数
+	Vertex(int x) :data(x), adj(nullptr) {}//构造函数
 };
-template <typename T>
-inline ostream& operator << (ostream& os, Vertex<T>& v) {//输出
+
+inline ostream& operator << (ostream& os, Vertex& v) {//输出
 	return os << v.data;
 }
 #endif // !EDGEVERTEX_H_

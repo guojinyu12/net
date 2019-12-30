@@ -138,16 +138,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="all.h" />
-    <ClInclude Include="con-desstruct.h" />
-    <ClInclude Include="dijkstra.h" />
+    <ClInclude Include="con-desstruct.cpp" />
+    <ClInclude Include="dijkstra.cpp" />
     <ClInclude Include="Edge-Vertex.h" />
     <ClInclude Include="Graphlink.h" />
-    <ClInclude Include="insert.h" />
-    <ClInclude Include="remove.h" />
+    <ClInclude Include="insert.cpp" />
+    <ClInclude Include="remove.cpp" />
     <ClInclude Include="using.h" />
-    <ClInclude Include="get-inf.h" />
-    <ClInclude Include="output.h" />
+    <ClInclude Include="get-inf.cpp" />
+    <ClInclude Include="output.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.TXT" />

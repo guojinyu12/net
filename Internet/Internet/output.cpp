@@ -1,6 +1,6 @@
 #include"Graphlink.h"
-template <typename T>
-ostream& operator << (ostream& os, Graphlink<T>& G) {// ‰»Î
+
+ostream& operator << (ostream& os, Graphlink& G) {// ‰»Î
 	Edge *p= nullptr;
 	for (int i = 0; i < G.numVertices; i++) {
 			os << G.Table[i] << endl;
