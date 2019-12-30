@@ -62,13 +62,13 @@ void Graphlink<T>::printShortestPath(T vertex) {
 	for (int i = 0; i < num; ++i) {
 		if (i != v) {
 			if (dist[i] != max) {
-				cout << std::setw(10) << i + 1 << std::setw(10)
+				cout << std::setw(10) << getValue(i) << std::setw(10)
 					<< next[i]<< std::setw(10) << dist[i] << endl;
 			}
 		}
 		else
-			cout << std::setw(10) << i + 1 << std::setw(10)
-			<< i+1 << std::setw(10) << dist[i] << endl;
+			cout << std::setw(10) << getValue(i) << std::setw(10)
+			<< getValue(i) << std::setw(10) << dist[i] << endl;
 	}
 	delete[]next;
 	delete[]d;
